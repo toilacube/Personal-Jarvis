@@ -1,0 +1,1101 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.claude/
+  .mcp.json
+  settings.json
+  settings.local.json
+journal/
+  2026/
+    goals.md
+reference/
+  habits.md
+  values.md
+scripts/
+  journal.sh
+skills/
+  morning/
+    reference.md
+    SKILL.md
+templates/
+  daily-journal.md
+  decision.md
+.gitignore
+CLAUDE.md
+inbox.md
+plan.md
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".claude/.mcp.json">
+{
+  "mcpServers": {
+    "qmd": {
+      "command": "qmd",
+      "args": ["mcp"],
+      "cwd": "/home/toilacube/dreamer/life-system"
+    }
+  }
+}
+</file>
+
+<file path=".claude/settings.json">
+
+</file>
+
+<file path=".claude/settings.local.json">
+{
+  "permissions": {
+    "allow": [
+      "Bash(qmd status:*)",
+      "Bash(qmd collection add:*)",
+      "Bash(qmd:*)",
+      "Bash(qmd context add:*)"
+    ]
+  }
+}
+</file>
+
+<file path="README.md">
+# Life System
+
+A personal life operating system powered by Claude Code. Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
+
+## What This Is
+
+A plain-text system for life planning, daily journaling, decision-making, and task capture — with Claude Code as your thinking partner. No apps, no subscriptions. Just markdown files, a terminal, and an AI that pushes back.
+
+## What You Get
+
+- **Life plan** — 10-year vision, life chapters, what you're optimizing for
+- **Annual goals** — Yearly bets, anti-goals, who you're becoming
+- **Daily journal** — Franklin's morning question + Carmack-style timestamped log + evening reflection
+- **Decision records** — Structured docs for important decisions so you can trace your reasoning later
+- **Inbox** — Quick capture for tasks, ideas, and things to process later
+- **Values & habits** — Your principles and daily routines, written down so Claude can hold you to them
+
+## Structure
+
+```
+/home/toilacube/dreamer/life-system/
+├── CLAUDE.md          # Project configuration (Claude reads this before every session)
+├── decisions/         # Decision records
+├── inbox.md           # Quick capture inbox
+├── journal/
+│   └── 2026/          # Yearly journals → MM/YYYY-MM-DD.md daily entries
+├── plan.md            # 10-year life vision
+├── reference/
+│   ├── habits.md      # Daily routines
+│   └── values.md      # Core principles
+├── scripts/           # journal.sh for quick journal creation
+├── skills/            # morning/ skill for daily routine
+└── templates/         # daily-journal.md, decision.md
+```
+
+## Getting Started
+
+### 1. Customize Your Life Plan
+
+Edit `plan.md` with your:
+- Life chapters (past, present, future)
+- Enduring insights (self-knowledge)
+- Critical aspects (non-negotiables)
+- 10-year vision (what does a Tuesday look like?)
+- What you're deliberately NOT prioritizing right now
+
+### 2. Define Your Values and Habits
+
+Edit `reference/values.md` with your core principles.
+Edit `reference/habits.md` with your daily routines.
+
+### 3. Set Annual Goals
+
+Create `journal/2026/goals.md` with:
+- Yearly bets
+- Anti-goals (what you're avoiding)
+- Who you're becoming
+
+### 4. (Optional) Set Up the Journal Script
+
+The `jrn` command creates today's journal from the template and opens it in your editor:
+
+```bash
+cp scripts/journal.sh ~/.scripts/journal.sh
+chmod +x ~/.scripts/journal.sh
+# Edit ~/.scripts/journal.sh to update JOURNAL_DIR and TEMPLATE
+echo "alias jrn='~/.scripts/journal.sh'" >> ~/.zshrc
+source ~/.zshrc
+```
+
+### 5. Start Using It
+
+```bash
+cd /home/toilacube/dreamer/life-system
+claude
+```
+
+Say "morning" or "let's plan the day" and Claude will:
+- Review yesterday's journal
+- Create today's journal from the template
+- Ask Franklin's question: "What good shall I do this day?"
+- Challenge your priorities against your annual goals and life plan
+
+## How It Works Day-to-Day
+
+### Morning
+- Claude reviews yesterday's journal, annual goals, and life plan
+- Creates today's journal entry
+- Sets priorities and challenges them against your values
+
+### During the Day
+- **Auto-logging**: Claude adds timestamped entries to your journal as you work together
+- **Inbox capture**: Quick tasks and ideas go to `inbox.md` for processing later
+- **Decision records**: When facing a significant decision, Claude helps you think through it and creates a decision doc in `decisions/`
+
+### Evening
+- Franklin's question: "What good have I done today?"
+- Brief reflection on what happened vs. what was planned
+
+## The Key Insight
+
+The system works because Claude reads your plan, goals, and values before every session. It holds you accountable to what you said matters. When your daily actions drift from your annual goals, it names it. When your goals drift from your life plan, it names that too.
+
+The files are the source of truth. Claude is the accountability partner who never forgets what you wrote.
+
+## Customizing
+
+Everything is a starting point. Delete what doesn't resonate, add what does:
+
+- Don't care about Franklin's questions? Remove them from the template.
+- Want weekly reviews? Add a `week-WW.md` template.
+- Have a different morning routine? Update `reference/habits.md`.
+- The CLAUDE.md philosophy section is where you define the relationship. Make it yours.
+
+## Optional: QMD for Search
+
+Once you accumulate journal entries, decision docs, and notes, you'll want to search across them without manually reading dozens of files. [QMD](https://github.com/tobi/qmd) is a local CLI search engine for markdown files that supports keyword search (BM25), semantic/vector search, and hybrid queries with reranking.
+
+### Configured Collections
+
+QMD is already set up with three collections:
+
+| Collection | Path | Context | Files |
+|------------|------|---------|-------|
+| `journal` | `journal/` | Personal journal entries, daily reflections, and annual goals | 1 |
+| `reference` | `reference/` | Core values, habits, and reference materials | 2 |
+| `root` | `.` | Life system documentation, plans, and templates | 4 |
+
+### Install QMD
+
+```bash
+npm install -g @tobilu/qmd  # or brew install tobi/tap/qmd
+cd /home/toilacube/dreamer/life-system
+qmd update    # Build keyword index
+qmd embed     # Generate vector embeddings for semantic search
+```
+
+### Install QMD
+
+```bash
+brew install tobi/tap/qmd  # or your preferred package manager
+cd /home/toilacube/dreamer/life-system
+qmd update    # Build keyword index
+qmd embed     # Generate vector embeddings for semantic search
+```
+
+### Add QMD as an MCP server
+
+Add this to `./.claude/settings.json` under `mcpServers`:
+
+```json
+{
+  "mcpServers": {
+    "qmd": {
+      "command": "qmd",
+      "args": ["mcp"],
+      "cwd": "/home/toilacube/dreamer/life-system"
+    }
+  }
+}
+```
+
+Then add this section to your `CLAUDE.md` so Claude knows when to use it:
+
+```markdown
+### Searching Documents
+
+Use **QMD** to search across journals, decisions, plans, and inbox:
+
+- `search` — keyword/BM25, fast, good for specific terms
+- `vsearch` — semantic/vector, good for "what have I said about X" or thematic queries
+- `query` — hybrid (BM25 + vector + reranking), best for important searches
+- `get` / `multi_get` — retrieve full document content by path
+
+Read files directly when you already know the exact path.
+```
+
+### Keep the index fresh
+
+QMD doesn't auto-update. Run `qmd update && qmd embed` periodically.
+
+Check status anytime:
+```bash
+qmd status
+```
+
+This shows indexed files, vectors, collection contexts, and model info.
+</file>
+
+<file path="journal/2026/goals.md">
+# 2026
+
+**[Theme]** — One phrase that captures the year's focus.
+
+---
+
+<!-- Break your year into 3-6 areas. For each: clear outcomes, not vague aspirations.
+     "Get healthy" is useless. "Morning routine 5x/week, run 3x/week" is real. -->
+
+### [Area 1]: [Goal]
+- [ ]
+- [ ]
+
+### [Area 2]: [Goal]
+- [ ]
+- [ ]
+
+### [Area 3]: [Goal]
+- [ ]
+- [ ]
+
+---
+
+## Details
+
+<!-- Flesh out the "why" and "how" for each goal area.
+     What's the bet? What has to go right? What's the risk? -->
+
+### [Area 1]
+
+
+
+---
+
+## Anti-goals
+
+<!-- What will you actively avoid this year? -->
+
+-
+-
+
+---
+
+## Becoming
+
+<!-- Who are you becoming this year? Not what you're doing — who you're turning into. -->
+
+-
+-
+</file>
+
+<file path="reference/habits.md">
+# Habits
+
+Daily actions that support my mission and values.
+
+---
+
+## Daily Schedule
+
+<!-- Block out your ideal day. Not rigid — directional. -->
+
+| Time | Block |
+|------|-------|
+| | Morning routine |
+| | Deep work |
+| | Lunch / admin |
+| | Deep work |
+| | Evening wind-down |
+| | Sleep |
+
+---
+
+## Morning Routine
+
+-
+-
+-
+
+---
+
+## Core Habits
+
+**Health**
+-
+
+**Mind**
+-
+
+**Financial**
+-
+
+**Relationships**
+-
+</file>
+
+<file path="reference/values.md">
+# Values
+
+## Mission
+
+<!-- One sentence. What are you here to do? -->
+
+---
+
+## Core Values
+
+<!-- 3-5 values. Not aspirational — descriptive of who you are at your best. -->
+
+1. **[Value]** — What it means to you.
+2. **[Value]** — What it means to you.
+3. **[Value]** — What it means to you.
+
+---
+
+## Core Principles
+
+<!-- Rules you've learned from experience. Things you'd tell a younger version of yourself. -->
+
+1.
+2.
+3.
+
+---
+
+## Work Principles
+
+<!-- How you do your best work. What you've learned about your process. -->
+
+1.
+2.
+3.
+</file>
+
+<file path="scripts/journal.sh">
+#!/bin/bash
+
+# Journal quick-open script
+# Opens today's journal, creating from template if needed
+# Backfills any missing days with calendar events and carried-over todos
+#
+# Setup:
+#   1. Edit JOURNAL_DIR and TEMPLATE below to match your paths
+#   2. chmod +x this file
+#   3. Add to your shell: alias jrn='~/.scripts/journal.sh'
+#   4. (Optional) Install icalBuddy for calendar integration: brew install ical-buddy
+
+JOURNAL_DIR="$HOME/Documents/YOURNAME/journal"
+TEMPLATE="$HOME/Documents/YOURNAME/templates/daily-journal.md"
+
+# Editor command — change to your preference (e.g., "cursor", "vim", "open -a Obsidian")
+EDITOR_CMD="code"
+
+# Calendar names to include (only used if icalBuddy is installed)
+CALENDAR_NAMES="Work,Personal,Family"
+
+# Get today's date
+TODAY=$(date +%Y-%m-%d)
+
+# Find most recent journal entry (looking back up to 60 days)
+find_most_recent_journal_date() {
+    for i in $(seq 1 60); do
+        PAST_DATE=$(date -v-${i}d +%Y-%m-%d)
+        PAST_YEAR=$(date -v-${i}d +%Y)
+        PAST_MONTH=$(date -v-${i}d +%m)
+        PAST_FILE="$JOURNAL_DIR/$PAST_YEAR/$PAST_MONTH/$PAST_DATE.md"
+        if [ -f "$PAST_FILE" ]; then
+            echo "$PAST_DATE"
+            return
+        fi
+    done
+}
+
+# Get calendar events for a specific date (macOS only, requires icalBuddy)
+get_calendar_events() {
+    local TARGET_DATE="$1"
+    if command -v icalBuddy &> /dev/null; then
+        icalBuddy -nc -nrd -ic "$CALENDAR_NAMES" -eep "notes,location,url,attendees" -tf "%H:%M" -df "" eventsFrom:"$TARGET_DATE" to:"$TARGET_DATE" 2>/dev/null | python3 -c "
+import sys
+import re
+
+lines = sys.stdin.read().strip().split('\n')
+results = []
+i = 0
+while i < len(lines):
+    line = lines[i].strip()
+    if line.startswith('• '):
+        title = line[2:]
+        i += 1
+        if i < len(lines):
+            time_line = lines[i].strip()
+            match = re.match(r'(\d{2}:\d{2}) - (\d{2}:\d{2})', time_line)
+            if match:
+                start, end = match.groups()
+                sh, sm = map(int, start.split(':'))
+                eh, em = map(int, end.split(':'))
+                dur = (eh * 60 + em) - (sh * 60 + sm)
+                if dur >= 60:
+                    h, m = divmod(dur, 60)
+                    dur_str = f'{h}h {m}m' if m else f'{h}h'
+                else:
+                    dur_str = f'{dur}m'
+                results.append(f'- {start} - {title} ({dur_str})')
+    i += 1
+print('\n'.join(results))
+" 2>/dev/null
+    fi
+}
+
+# Get incomplete todos from a journal file
+get_incomplete_todos() {
+    local FILE="$1"
+    if [ -f "$FILE" ]; then
+        grep -E '^\s*- \[ \]' "$FILE" 2>/dev/null | head -n 20 || true
+    fi
+}
+
+# Get active (unresolved) decisions from a journal file
+get_active_decisions() {
+    local FILE="$1"
+    if [ -f "$FILE" ]; then
+        sed -n '/^## Active Decisions/,/^## /p' "$FILE" 2>/dev/null | \
+            grep -E '^\s*- \[ \]' 2>/dev/null || true
+    fi
+}
+
+# Create a journal entry for a specific date
+create_journal_entry() {
+    local TARGET_DATE="$1"
+    local PREV_FILE="$2"
+
+    local TARGET_YEAR=$(echo "$TARGET_DATE" | cut -d'-' -f1)
+    local TARGET_MONTH=$(echo "$TARGET_DATE" | cut -d'-' -f2)
+    local TARGET_FILE="$JOURNAL_DIR/$TARGET_YEAR/$TARGET_MONTH/$TARGET_DATE.md"
+
+    # Skip if already exists
+    if [ -f "$TARGET_FILE" ]; then
+        echo "$TARGET_FILE"
+        return
+    fi
+
+    # Ensure directory exists
+    mkdir -p "$(dirname "$TARGET_FILE")"
+
+    # Get todos from previous file
+    local PAST_TODOS=""
+    if [ -n "$PREV_FILE" ]; then
+        PAST_TODOS=$(get_incomplete_todos "$PREV_FILE")
+    fi
+
+    # Get active decisions from previous file
+    local PAST_DECISIONS=""
+    if [ -n "$PREV_FILE" ]; then
+        PAST_DECISIONS=$(get_active_decisions "$PREV_FILE")
+    fi
+
+    # Get calendar events for this date
+    local CALENDAR_EVENTS=$(get_calendar_events "$TARGET_DATE")
+
+    # Read template and replace placeholders
+    if [ -f "$TEMPLATE" ]; then
+        local CONTENT=$(cat "$TEMPLATE")
+        CONTENT="${CONTENT//\{\{DATE\}\}/$TARGET_DATE}"
+
+        if [ -n "$PAST_TODOS" ]; then
+            CONTENT="${CONTENT//\{\{PAST_TODOS\}\}/$PAST_TODOS}"
+        else
+            CONTENT="${CONTENT//\{\{PAST_TODOS\}\}/}"
+        fi
+
+        if [ -n "$CALENDAR_EVENTS" ]; then
+            CONTENT="${CONTENT//\{\{CALENDAR\}\}/$CALENDAR_EVENTS}"
+        else
+            CONTENT="${CONTENT//\{\{CALENDAR\}\}/}"
+        fi
+
+        if [ -n "$PAST_DECISIONS" ]; then
+            CONTENT="${CONTENT//\{\{PAST_DECISIONS\}\}/$PAST_DECISIONS}"
+        else
+            CONTENT="${CONTENT//\{\{PAST_DECISIONS\}\}/}"
+        fi
+
+        echo "$CONTENT" > "$TARGET_FILE"
+    fi
+
+    echo "$TARGET_FILE"
+}
+
+# Calculate days between two dates (macOS)
+days_between() {
+    local START_DATE="$1"
+    local END_DATE="$2"
+    local START_SEC=$(date -j -f "%Y-%m-%d" "$START_DATE" "+%s")
+    local END_SEC=$(date -j -f "%Y-%m-%d" "$END_DATE" "+%s")
+    echo $(( (END_SEC - START_SEC) / 86400 ))
+}
+
+# Main logic
+MOST_RECENT_DATE=$(find_most_recent_journal_date)
+
+if [ -n "$MOST_RECENT_DATE" ]; then
+    DAYS_MISSING=$(days_between "$MOST_RECENT_DATE" "$TODAY")
+
+    if [ "$DAYS_MISSING" -gt 0 ]; then
+        PREV_YEAR=$(echo "$MOST_RECENT_DATE" | cut -d'-' -f1)
+        PREV_MONTH=$(echo "$MOST_RECENT_DATE" | cut -d'-' -f2)
+        PREV_FILE="$JOURNAL_DIR/$PREV_YEAR/$PREV_MONTH/$MOST_RECENT_DATE.md"
+
+        # Create entries for each missing day (starting from day after most recent)
+        for i in $(seq $((DAYS_MISSING - 1)) -1 0); do
+            TARGET_DATE=$(date -v-${i}d +%Y-%m-%d)
+            PREV_FILE=$(create_journal_entry "$TARGET_DATE" "$PREV_FILE")
+        done
+    fi
+else
+    # No previous journal found, just create today
+    create_journal_entry "$TODAY" ""
+fi
+
+# Build today's file path and open
+TODAY_YEAR=$(date +%Y)
+TODAY_MONTH=$(date +%m)
+TODAY_FILE="$JOURNAL_DIR/$TODAY_YEAR/$TODAY_MONTH/$TODAY.md"
+
+$EDITOR_CMD "$TODAY_FILE"
+</file>
+
+<file path="skills/morning/reference.md">
+# Morning Skill Reference
+
+## File Locations
+
+```
+~/Documents/YOURNAME/plan.md                        # 10-year life vision
+~/Documents/YOURNAME/journal/YYYY/goals.md          # Annual goals
+~/Documents/YOURNAME/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
+~/Documents/YOURNAME/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
+~/Documents/YOURNAME/reference/values.md            # Core principles
+~/Documents/YOURNAME/inbox.md                       # Quick capture
+~/Documents/YOURNAME/decisions/                     # Decision records
+~/Documents/YOURNAME/templates/                     # Templates
+```
+
+## Task Management (Plain Text)
+
+All tasks are managed in plain text:
+
+- **Personal backlog / quick capture:** `~/Documents/YOURNAME/inbox.md`
+- **Project tasks:** `plan.md` in each project's repo root
+- **Daily to-dos:** In the morning section of the daily journal
+
+## Optional: Calendar Integration (macOS)
+
+If you use Apple Calendar, install `icalBuddy` to pull today's events into the morning routine:
+
+```bash
+brew install ical-buddy
+```
+
+Then add this to Step 3 of the morning skill to auto-populate the log with today's events:
+```bash
+icalBuddy -nc -nrd -eep "notes,location,url,attendees" -tf "%H:%M" -df "" eventsToday
+```
+
+You can filter to specific calendars with `-ic "Work,Personal"`.
+</file>
+
+<file path="skills/morning/SKILL.md">
+---
+name: morning
+description: "Daily journaling, reflection, and planning. Use when user says 'morning', 'let's plan the day', 'journal', or similar. Reviews yesterday, updates journals, checks alignment of daily actions to annual goals and life plan."
+user-invocable: true
+allowed-tools: Read, Edit, Write, Glob, Grep, Bash, AskUserQuestion
+---
+
+# Morning Journaling, Reflection & Planning
+
+This skill ensures daily activities ladder up to annual goals, which ladder up to the long-term life plan.
+
+**Tone:** Direct, curious, non-judgmental. Like a good coach — supportive but willing to challenge. Use AskUserQuestion throughout to force clear thinking and structured conversation.
+
+---
+
+## Step 1: Load Context
+
+Read these files in parallel — don't summarize them yet, just load them:
+
+1. **Yesterday's journal:** `~/Documents/YOURNAME/journal/YYYY/MM/YYYY-MM-DD.md` (calculate yesterday's date). If it doesn't exist, look back up to 7 days for the most recent entry.
+2. **Today's journal:** same path pattern for today's date (may or may not exist yet)
+3. **Annual goals:** `~/Documents/YOURNAME/journal/YYYY/goals.md`
+4. **Life plan:** `~/Documents/YOURNAME/plan.md`
+5. **Inbox:** `~/Documents/YOURNAME/inbox.md`
+6. **Active decisions:** Scan `~/Documents/YOURNAME/decisions/` for any decision documents with status "Open" or "Active". Read the most recent or most relevant ones.
+
+---
+
+## Step 2: Review Yesterday
+
+**Present yesterday's summary** — what was planned, what happened (based on the log), any open threads or unresolved items. Don't just list — reflect. Name what was avoided. Call out patterns.
+
+Then **ask the user to walk through yesterday.** Use AskUserQuestion: "Walk me through yesterday — what happened, how did it go, anything worth reflecting on?"
+
+Let them talk. Ask follow-up questions. Push back if something sounds like narrative rather than reality. Challenge assumptions.
+
+**Watch for emotional signals.** Don't ask "how are you feeling?" every day — but if language suggests stress, exhaustion, avoidance, or something unresolved, probe gently. Surface them when you notice them, not as a checkbox.
+
+**Update yesterday's journal** with reflections:
+- Fill in the Log section with what actually happened
+- Add an Evening/Reflections section if it's missing
+- Mark completed to-dos as done
+- Keep the user's voice — use their language, not polished summaries
+
+---
+
+## Step 3: Review Today's To-Dos
+
+Read today's journal file (or create one from the template if it doesn't exist).
+
+**Clean it up:**
+- Remove stale carried-over items that are no longer relevant
+- Update Active Projects and Active Decisions to reflect current state
+
+**Check inbox** (`~/Documents/YOURNAME/inbox.md`) for items that should be promoted to today.
+
+Present the landscape: carried-over to-dos and any inbox items worth surfacing.
+
+**Ask what to focus on today.** Offer 2-4 options based on what you see, but let the user override.
+
+---
+
+## Step 4: Alignment Check
+
+This is the critical step. Compare today's planned to-dos against the annual goals checklist and life plan.
+
+### 4a: Review active decisions
+
+Check any open decision documents loaded in Step 1. Are there action items due this week? Has anything changed since the last update? Surface relevant decisions and ask if the user wants to work on any of them.
+
+Don't force this every day — but if a decision has near-term deadlines or the user signals they've been thinking about it, dig in.
+
+### 4b: Do today's to-dos ladder up?
+
+For each to-do, ask: does this connect to one of the annual goals? If not, flag it.
+
+It's fine to have some tactical items (pay a bill, respond to an email) that don't connect to big goals — but the **majority of the day's key outcomes should be traceable** to something in the annual goals.
+
+If they don't align, ask about it using AskUserQuestion. Don't just flag silently — engage: "This doesn't seem to connect to any of your goals. Is this important for a reason I'm missing, or is it noise?"
+
+### 4c: Are there annual goals with no to-dos?
+
+Look at the annual goals checklist. Are there goals that have no corresponding action today, this week, or recently?
+
+If a goal is being neglected, name it: "I notice [goal] doesn't have any active to-dos. Is that intentional, or should we add something?"
+
+Don't be annoying about this — some goals are seasonal or blocked. But if a goal keeps having no action for weeks, that's a pattern worth naming.
+
+### 4d: Do the annual goals still ladder up to the life plan?
+
+This doesn't need to happen every day. But if something feels off — a goal that doesn't connect, or a new priority that emerged — flag it and suggest updating the goals or plan.
+
+---
+
+## Step 5: Finalize Today's Journal
+
+Write/update today's journal file with:
+
+```markdown
+# YYYY-MM-DD
+
+## Morning (Franklin: "What good shall I do this day?")
+- [ ] Key outcome 1 (connects to: [annual goal])
+- [ ] Key outcome 2
+- [ ] Key outcome 3
+- [ ] Carried-over items that are still relevant
+
+## Log
+-
+
+## Active Projects
+1. [current projects]
+
+## Active Decisions
+- [ ] [unresolved decisions]
+```
+
+**Key details:**
+- Key outcomes from the conversation first, then carried-over items
+- Active Projects and Active Decisions should reflect current state
+
+---
+
+## Step 6: Challenge and Close
+
+Before finishing, do a final check:
+
+- **Is the plan too ambitious?** If there are more than 3-4 key outcomes, push back. "That's a lot for one day. What's the one thing that matters most?"
+- **Is something being avoided?** If a hard task keeps not making the list, name it.
+- **Any actions for inbox?** If the conversation produced tasks that aren't for today, add them to `~/Documents/YOURNAME/inbox.md`.
+
+End with a brief, direct summary of the 1-3 things that matter most today.
+
+---
+
+## Throughout the Day
+
+When something is logged or asked to be added to the journal:
+- Read today's file
+- Append a timestamped entry in the Log section: `- HH:MM — Entry text`
+
+When something log-worthy comes up in conversation:
+- Add it to today's journal and say "Added to log: [brief summary]"
+- No need to ask permission — keep the conversation flowing
+
+---
+
+## Evening (if invoked)
+
+- Read today's journal file
+- Summarize what was accomplished vs. the morning focus
+- Prompt with Franklin's closing question: "What good have I done today?"
+- Append an evening reflection section
+- Carry forward anything that didn't get done (note it for tomorrow)
+
+---
+
+## Weekly Review (if invoked)
+
+- Read the week's journal entries
+- Summarize the week: what got done, what didn't, patterns
+- Check annual goals progress — which goals moved forward this week?
+- Name what's being avoided
+- Identify 1-3 priorities for next week
+</file>
+
+<file path="templates/daily-journal.md">
+# {{DATE}}
+
+## Morning (Franklin: "What good shall I do this day?")
+- [ ]
+
+## Log
+-
+
+## Evening (Franklin: "What good have I done today?")
+</file>
+
+<file path="templates/decision.md">
+# [Decision Title]
+
+---
+**Status:** Open
+**Opened:** YYYY-MM-DD
+**Closed:**
+**Decision:**
+---
+
+## Context
+
+<!-- What's the situation? Why is this decision needed now? -->
+
+## Options
+
+<!-- List the realistic options. For each: what happens if you choose it? -->
+
+| Option | Upside | Downside | Gut Feel |
+|--------|--------|----------|----------|
+| | | | |
+| | | | |
+
+## What I'm Optimizing For
+
+<!-- What matters most in this decision? Rank the criteria. -->
+
+1.
+2.
+3.
+
+## Decision
+
+<!-- What did you decide and why? Write this after you've thought it through. -->
+
+## Review Date
+
+<!-- When will you check if this was the right call? -->
+</file>
+
+<file path=".gitignore">
+.DS_Store
+</file>
+
+<file path="CLAUDE.md">
+# Local CLAUDE.md
+
+**This is a LOCAL configuration** - do not make changes to `~/.claude/` global settings.
+All paths are relative to this project: `/home/toilacube/dreamer/life-system/`
+This life system exists only within this project directory.
+
+## Philosophy
+
+Be a critical thinking partner, not a helpful completer.
+
+When helping me create something — writing, code, strategy, decisions, journal reflections — evaluate it as if you were the recipient. Don't wait to be asked for criticism. If something is vague, redundant, over-engineered, or missing the point, name it. Push back on assumptions. "Looks good" is only useful when it's actually good.
+
+This applies to everything: emails, architecture decisions, code, journal entries, life planning. The standard is: would the audience actually be excited about this? If not, say so and say why.
+
+**Tone:** Direct, curious, non-judgmental. Like a good coach — supportive but willing to challenge. Ask "why" repeatedly. Surface what's unsaid.
+
+---
+
+## Co-Thinking Mode
+
+When working through the day, act as a thinking partner:
+
+- **Auto-log with notification**: When something log-worthy comes up, add it to today's journal and say "Added to log: [brief summary]". No need to ask permission — keep the conversation flowing.
+- **Challenge in real-time**: Don't save critique for the end. If I'm heading in a fuzzy direction, say so early.
+- **Use AskUserQuestion constantly**: Don't just ask in prose — use the tool. It forces clearer thinking, creates structure, and feels more like a real conversation. Use it to:
+  - See around corners (what could go wrong? what's being avoided?)
+  - Disambiguate requests (which direction? what's the priority?)
+  - Probe during reflection (why this? what if the opposite were true?)
+  - Test assumptions (steel man, straw man, "if X were true...")
+  - Force decisions when I'm circling
+- **Proactively offer to research**: Your knowledge is stale, especially for fast-moving areas (LLMs, libraries, tools, frameworks, market data). When discussing architecture, technical choices, or anything where recent developments matter, offer to research current best practices, latest releases, and real benchmarks before making recommendations. Don't confidently recommend something that might be outdated.
+- **Prompt to journal**: At the end of a piece of work — code, strategy, decision, thinking session, whatever — ask if I want to record it to today's journal. Keep the habit of capturing what matters.
+
+**What to log:** Decisions, conclusions, work accomplished, key insights.
+**What to skip:** Exploratory back-and-forth (unless requested), trivial exchanges.
+
+Actions that come out of conversations go in `/home/toilacube/dreamer/life-system/inbox.md`, not embedded in journal entries.
+
+---
+
+## Personal Life System
+
+Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
+
+### Locations
+
+```
+/home/toilacube/dreamer/life-system/plan.md                        # 10-year life vision
+/home/toilacube/dreamer/life-system/journal/YYYY/goals.md          # Annual goals
+/home/toilacube/dreamer/life-system/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
+/home/toilacube/dreamer/life-system/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
+/home/toilacube/dreamer/life-system/reference/values.md            # Core principles
+/home/toilacube/dreamer/life-system/inbox.md                       # Quick capture
+/home/toilacube/dreamer/life-system/decisions/                     # Decision records
+/home/toilacube/dreamer/life-system/templates/                     # Templates
+```
+
+### Daily Journal Format
+
+- **Morning**: Franklin's "What good shall I do this day?" + today's priorities
+- **Log**: Timestamped entries throughout the day (Carmack-style)
+- **Evening**: Franklin's "What good have I done today?" + reflection
+
+### Morning Routine
+
+When I say "morning" or "let's plan the day":
+
+1. Read yesterday's journal — check what was planned vs. what happened
+2. Read annual goals and life plan for context
+3. Create today's journal from the template
+4. Ask Franklin's morning question: "What good shall I do this day?"
+5. Challenge my priorities — do they connect to annual goals? Am I avoiding something important?
+6. Carry forward any uncompleted tasks from yesterday
+
+### During the Day
+
+- Help process inbox, search notes for context, push back on noise
+- Auto-log to today's journal when something log-worthy comes up
+
+---
+
+## General Rules
+
+- **Scope confirmation**: When I ask for an action in an external tool (Linear, GitHub, Slack), do NOT modify local files unless explicitly asked. Confirm the scope before proceeding.
+- **Use `gh` CLI** for all GitHub operations (cloning, PRs, issues, repo lookup) rather than asking for git URLs or using raw git commands. Assume `gh` is authenticated.
+- **Check existing environments**: For Python projects, always check for an existing venv/uv setup before creating a new one. For Node projects, check the package manager (pnpm/npm/yarn) from lockfiles before guessing.
+- **When you're unsure, ask — don't guess.** If there are 2+ reasonable interpretations of a request, use AskUserQuestion to disambiguate before starting work. The cost of one clarifying question is far less than building the wrong thing.
+
+---
+
+## Debugging
+
+- **Exit code 137 = OOM killed.** Never report a service as "running successfully" if it exits with 137. Flag the resource constraint immediately and suggest fixes (increase Docker memory, reduce running services, etc.).
+- **Exit code 1 with no output** usually means a missing env var or import error. Check logs before retrying.
+
+---
+
+## Git Workflow
+
+**Never use rebase.** Always preserve history with merge commits.
+
+When syncing with remote or resolving conflicts:
+- `git pull` (merge, not `git pull --rebase`)
+- `git merge origin/main` to bring in upstream changes
+- Resolve conflicts in the merge commit
+
+Rationale: Rebase rewrites history and can silently drop commits when interrupted or when stash operations interact poorly. Merge commits are explicit, reversible, and preserve the true sequence of events.
+
+---
+
+## Code Projects
+
+<!-- Add your own projects here -->
+<!-- Example:
+Projects live in `~/Developer/`:
+- `~/Developer/myproject/` - Description
+-->
+</file>
+
+<file path="inbox.md">
+# Inbox
+
+Quick capture. Process later.
+
+---
+
+## To Do
+
+- [ ]
+
+## Someday / Not Now
+
+-
+
+## Ideas
+
+-
+</file>
+
+<file path="plan.md">
+# Life Plan
+
+## Life Chapters
+
+<!-- Map out the major chapters of your life — past, present, and future.
+     This isn't a prediction. It's a framework for thinking about where you are
+     and where you're heading. Update it as your understanding evolves. -->
+
+**Chapter 1: [Title]** (years, age range)
+Description of this chapter.
+
+**Chapter 2: [Title]** (years, age range)
+Description of this chapter — what you're optimizing for, what success looks like.
+
+**Chapter 3: [Title]** (years, age range)
+What comes after.
+
+---
+
+## Enduring Insights
+
+<!-- Self-knowledge that guides your choices. What have you learned about how you
+     actually work, what you need, what drains you? Be honest — this is for you. -->
+
+-
+-
+-
+
+---
+
+## Critical Aspects
+
+<!-- Non-negotiables. The things you will not sacrifice regardless of circumstances. -->
+
+1.
+2.
+3.
+
+---
+
+## 10-Year Vision
+
+<!-- Where are you in 10 years? Not goals — a picture of the life.
+     What does a Tuesday look like? Who's around you? What are you working on?
+     What's the bridge from here to there? -->
+
+
+
+---
+
+## Not Prioritizing
+
+<!-- Equally important: what are you deliberately NOT doing right now?
+     Saying no explicitly prevents drift. -->
+
+-
+-
+
+---
+
+## Relationships
+
+<!-- The people who matter most. What does investment look like for each? -->
+
+-
+-
+
+---
+
+## Fears to Watch
+
+<!-- Name them. Fears you don't name run you. Fears you name become projects. -->
+
+1.
+2.
+3.
+</file>
+
+</files>
