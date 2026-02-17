@@ -23,6 +23,7 @@ Read these files in parallel — don't summarize them yet, just load them:
 4. **Life plan:** `~/Documents/YOURNAME/plan.md`
 5. **Inbox:** `~/Documents/YOURNAME/inbox.md`
 6. **Active decisions:** Scan `~/Documents/YOURNAME/decisions/` for any decision documents with status "Open" or "Active". Read the most recent or most relevant ones.
+7. **Library:** Scan `~/Documents/YOURNAME/library/` for books currently being read and learning in progress. Read `library/books/reading.md` and any active course notes.
 
 ---
 
@@ -89,6 +90,15 @@ Don't be annoying about this — some goals are seasonal or blocked. But if a go
 ### 4d: Do the annual goals still ladder up to the life plan?
 
 This doesn't need to happen every day. But if something feels off — a goal that doesn't connect, or a new priority that emerged — flag it and suggest updating the goals or plan.
+
+### 4e: Library check
+
+Check if there are reading goals or learning progress to surface:
+- Any books currently reading that could use time today?
+- Any courses with progress due this week?
+- Are learning goals from annual goals being neglected?
+
+Don't force this every day — but surface when relevant.
 
 ---
 

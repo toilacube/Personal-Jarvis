@@ -52,6 +52,7 @@ Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
 /home/toilacube/dreamer/life-system/reference/values.md            # Core principles
 /home/toilacube/dreamer/life-system/inbox.md                       # Quick capture
 /home/toilacube/dreamer/life-system/decisions/                     # Decision records
+/home/toilacube/dreamer/life-system/library/                       # Books, courses, articles
 /home/toilacube/dreamer/life-system/templates/                     # Templates
 ```
 
