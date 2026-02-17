@@ -1,7 +1,10 @@
-# Life System
+
+
+# My Life System
 
 A personal life operating system powered by Claude Code. Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
 
+Forked from: https://github.com/davidhariri/life
 ## What This Is
 
 A plain-text system for life planning, daily journaling, decision-making, and task capture — with Claude Code as your thinking partner. No apps, no subscriptions. Just markdown files, a terminal, and an AI that pushes back.
