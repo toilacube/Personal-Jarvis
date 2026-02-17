@@ -1,8 +1,8 @@
 
 
-# My Life System
+# Personal Jarvis
 
-A personal life operating system powered by Claude Code. Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
+Personal Jarvis to manage my life. Powered by Claude Code. Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
 
 Forked from: https://github.com/davidhariri/life
 ## What This Is
