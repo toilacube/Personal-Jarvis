@@ -80,6 +80,16 @@ When I say "morning" or "let's plan the day":
 
 ---
 
+### Journal Rules
+
+- **Never auto-complete checkboxes.** Learning about something ≠ completing it. Only mark `[x]` when the user explicitly confirms the action is done.
+- **"Note" ≠ "Do".** When I say "note this" or "remember this," capture the information but leave the checkbox unchecked.
+- **Distinguish learning from doing.** "Researching X" or "learning about X" goes in the log or Reading/Learning section, not as a completed task.
+- **Ask before marking complete.** If you're unsure whether something is actually finished, ask. Don't guess.
+- **Log what happens, not what I say I'll do.** Future intentions go in inbox or as unchecked items. Only log actual accomplishments.
+
+---
+
 ## General Rules
 
 - **Scope confirmation**: When I ask for an action in an external tool (Linear, GitHub, Slack), do NOT modify local files unless explicitly asked. Confirm the scope before proceeding.
