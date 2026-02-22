@@ -21,7 +21,7 @@ A plain-text system for life planning, daily journaling, decision-making, and ta
 ## Quick Start
 
 ```bash
-cd /home/toilacube/dreamer/life-system
+cd /home/toilacube/dreamer/jarvis
 claude
 ```
 
@@ -30,7 +30,7 @@ Say "morning" or "let's plan the day" — Claude will run the full routine.
 ## Structure
 
 ```
-life-system/
+jarvis/
 ├── CLAUDE.md              # Claude configuration
 ├── plan.md                # 10-year life vision
 ├── inbox.md               # Quick capture
@@ -88,7 +88,7 @@ Then customize `JOURNAL_DIR` and `TEMPLATE` in the script.
 
 ```bash
 npm install -g @tobilu/qmd
-cd /home/toilacube/dreamer/life-system
+cd /home/toilacube/dreamer/jarvis
 qmd update && qmd embed
 ```
 

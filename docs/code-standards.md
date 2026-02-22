@@ -25,7 +25,7 @@ This document defines the conventions and standards for the Life System project.
 ### Directory Structure
 
 ```
-life-system/
+jarvis/
 ├── journal/              # All time-based content
 │   └── YYYY/            # Year directory
 │       ├── goals.md     # Annual goals (required)

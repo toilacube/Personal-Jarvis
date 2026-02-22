@@ -73,7 +73,7 @@ User Input → Claude → File System (markdown)
 ### File Structure
 
 ```
-life-system/
+jarvis/
 ├── CLAUDE.md              # Claude behavior instructions
 ├── plan.md                # 10-year vision
 ├── inbox.md               # Quick capture

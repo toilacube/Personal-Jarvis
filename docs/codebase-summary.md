@@ -13,7 +13,7 @@ This document provides an overview of the Life System codebase. It is auto-gener
 ## Directory Structure
 
 ```
-/home/toilacube/dreamer/life-system/
+/home/toilacube/dreamer/jarvis/
 ├── .claude/
 │   ├── .mcp.json              # QMD MCP server configuration
 │   ├── settings.json          # Claude settings

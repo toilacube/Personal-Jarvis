@@ -1,7 +1,7 @@
 # Local CLAUDE.md
 
 **This is a LOCAL configuration** - do not make changes to `~/.claude/` global settings.
-All paths are relative to this project: `/home/toilacube/dreamer/life-system/`
+All paths are relative to this project: `/home/toilacube/dreamer/jarvis/`
 This life system exists only within this project directory.
 
 ## Philosophy
@@ -34,7 +34,7 @@ When working through the day, act as a thinking partner:
 **What to log:** Decisions, conclusions, work accomplished, key insights.
 **What to skip:** Exploratory back-and-forth (unless requested), trivial exchanges.
 
-Actions that come out of conversations go in `/home/toilacube/dreamer/life-system/inbox.md`, not embedded in journal entries.
+Actions that come out of conversations go in `/home/toilacube/dreamer/jarvis/inbox.md`, not embedded in journal entries.
 
 ---
 
@@ -45,15 +45,15 @@ Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
 ### Locations
 
 ```
-/home/toilacube/dreamer/life-system/plan.md                        # 10-year life vision
-/home/toilacube/dreamer/life-system/journal/YYYY/goals.md          # Annual goals
-/home/toilacube/dreamer/life-system/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
-/home/toilacube/dreamer/life-system/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
-/home/toilacube/dreamer/life-system/reference/values.md            # Core principles
-/home/toilacube/dreamer/life-system/inbox.md                       # Quick capture
-/home/toilacube/dreamer/life-system/decisions/                     # Decision records
-/home/toilacube/dreamer/life-system/library/                       # Books, courses, articles
-/home/toilacube/dreamer/life-system/templates/                     # Templates
+/home/toilacube/dreamer/jarvis/plan.md                        # 10-year life vision
+/home/toilacube/dreamer/jarvis/journal/YYYY/goals.md          # Annual goals
+/home/toilacube/dreamer/jarvis/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
+/home/toilacube/dreamer/jarvis/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
+/home/toilacube/dreamer/jarvis/reference/values.md            # Core principles
+/home/toilacube/dreamer/jarvis/inbox.md                       # Quick capture
+/home/toilacube/dreamer/jarvis/decisions/                     # Decision records
+/home/toilacube/dreamer/jarvis/library/                       # Books, courses, articles
+/home/toilacube/dreamer/jarvis/templates/                     # Templates
 ```
 
 ### Daily Journal Format
